@@ -10,3 +10,7 @@ a {
   display: flex;
   justify-content: flex-end;
 }
+
+.btn {
+  background-color: hotpink;
+}
