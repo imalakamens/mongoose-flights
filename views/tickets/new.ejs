@@ -1,5 +1,17 @@
 <%- include('../partials/header') %> 
 
-<h2>NEW TIX PAGE</h2>
+<h2>New Ticket</h2>
+
+<br><br><h2>Where ya wanna go?</h2>
+<form method="POST" action="/tickets">
+<label for="seat">Choose a Seat:</label>
+<input type="text" name="seat" required pattern="[A-F][1-9]\d?" placeholder="Seat/Isle Number">
+<label for="price">Price:</label>
+<input type="number" name="price" min="0" step=".01">
+
+<br>
+<input type="submit" value="Add Ticket">
+</form>
+<br>
 
 <%- include('../partials/footer') %> 

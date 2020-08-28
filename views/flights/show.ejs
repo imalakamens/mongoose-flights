@@ -22,8 +22,20 @@
 <% } else { %>
     <h5>No Destinations Yet</h5> 
 <% }; %> 
+<!-- Ticket render goes below! -->
+<% if(ticket.length) {%>
 
-<br><br><h2>Where ya wanna go?</h2>
+    <% ticket.forEach(t => { %>
+        <div>Seat:<%= t.seat %> </div>
+        <div>Price:<%= t.price %> </div>
+    
+    <% }); %>
+
+<% } else { %>
+    <h5>No Tickets Yet</h5> 
+<% }; %> 
+
+<br><br><h2>Destiny's Child</h2>
 <form method="POST" action="/flights/<%= flight._id %>/destinations">
 <label for="airport">Select Destination:</label>
 <select name="airport">
@@ -38,6 +50,6 @@
 <br>
 <input type="submit" value="Add Destination">
 </form>
-<br><a href="/flights/<%= flight._id %> /tickets/new" class="btn btn-group">Tickky Tickky Parm Parm</a>
+<br><a href="/flights/<%= flight._id %> /tickets/new" class="btn btn-group">Tickets</a>
 
 <%- include('../partials/footer') %> 
