@@ -33,7 +33,7 @@ function create(req, res) {
 function show(req, res) {
     Flight.findById(req.params.id, (err, flight) => {
         Ticket.find({flight: flight._id}, (err, tickets) => {
-            res.render('flights/show', {flight, tickets })
+            res.render('flights/show', {title: 'Flight Detail', flight, tickets })
         });
     });
 };
