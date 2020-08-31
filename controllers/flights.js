@@ -10,7 +10,7 @@ module.exports = {
 
 function index(req, res) {
     Flight.find({}, (err, flights) => {
-        res.render('flights/index', { flights });
+        res.render('flights/index', { flights }); //rendering a URI endpoint, with every flight(flights)
 })
 }
 
@@ -32,8 +32,8 @@ function create(req, res) {
 
 function show(req, res) {
     Flight.findById(req.params.id, (err, flight) => {
-        Ticket.find({flight: flight._id}, (err, ticket) => {
-            res.render('flights/show', { title: 'Flight Detail', flight, ticket })
+        Ticket.find({flight: flight._id}, (err, tickets) => {
+            res.render('flights/show', {flight, tickets })
         });
     });
 };

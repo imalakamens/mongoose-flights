@@ -1,5 +1,5 @@
 <%- include('../partials/header') %> 
-<h2><%= title %> </h2>
+<h2>Squidded Title Here</h2>
 
 <div>Airline:</div>
 <div><%= flight.airline %> </div>
@@ -12,7 +12,7 @@
 
 <br>
 <% if(flight.destinations.length) {%>
-
+    <h5>Destinations:</h5> 
     <% flight.destinations.forEach(d => { %>
         <div>Airport:<%= d.airport %> </div>
         <div>Arrival:<%= d.arrival %> </div>
@@ -22,34 +22,34 @@
 <% } else { %>
     <h5>No Destinations Yet</h5> 
 <% }; %> 
-<!-- Ticket render goes below! -->
-<% if(ticket.length) {%>
+<br>
+<!-- Render tix below! -->
 
-    <% ticket.forEach(t => { %>
-        <div>Seat:<%= t.seat %> </div>
-        <div>Price:<%= t.price %> </div>
+<% tickets.forEach(t => { %>
+   
+    <div>Seat:<%= t.seat %> </div>
+    <div>Price:<%= t.price %> </div>
     
     <% }); %>
 
-<% } else { %>
-    <h5>No Tickets Yet</h5> 
-<% }; %> 
-
-<br><br><h2>Destiny's Child</h2>
+<br><br><h2>Create New Flight Destination</h2>
 <form method="POST" action="/flights/<%= flight._id %>/destinations">
-<label for="airport">Select Destination:</label>
-<select name="airport">
+<label for="airport">Select Destination Airport:</label>
+<input name="airport" list="airport" placeholder="e.g. LAX">
+    <datalist id="airport">
     <option value="AUS">AUS</option>
     <option value="DFW">DFW</option>
     <option value="DEN">DEN</option>
     <option value="LAX">LAX</option>
     <option value="SAN">SAN</option>
+    </datalist>
 </select>
+<br>
 <label for="arrival">Select Arrival Date:</label>
 <input type="datetime-local" name="arrival">
 <br>
 <input type="submit" value="Add Destination">
 </form>
-<br><a href="/flights/<%= flight._id %> /tickets/new" class="btn btn-group">Tickets</a>
+<br><a href="/flights/<%=flight._id%>/tickets/new" class="btn btn-group">Create Ticket</a>
 
 <%- include('../partials/footer') %> 

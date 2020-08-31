@@ -2,23 +2,23 @@
   <h2>Add Flight Information</h2>
   <form action="/flights" method="POST">
     <label for="airline-select">Airline:
-      <select name="airline" id="airline-select">
-        <option value="">Select an Airline</option>
+      <input name="airline" list="airline" id="airline-select" placeholder="e.g. Delta">
+      <datalist id="airline">
         <option value="American">American</option>
         <option value="Delta">Delta</option>
         <option value="Southwest">Southwest</option>
         <option value="United">United</option>
-      </select>
+      </datalist>
     </label><br>
     <label for="airport-select">Airport:
-      <select name="airport" id="airport-select">
-        <option value="">Select an Airport</option>
+        <input name="airport" list="airport" id="airport-select" placeholder="e.g. LAX">
+        <datalist id="airport">
         <option value="ATL">ATL</option>
         <option value="DFW">DFW</option>
         <option value="DEN">DEN</option>
         <option value="LAX">LAX</option>
         <option value="SAN">SAN</option>
-      </select>
+        </datalist>
     </label><br>
     <label for="flightNo-select">Flight #:
       <input type="number" min="10" max="9999" name="flightNo" id="flightNo-select">
