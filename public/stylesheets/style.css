@@ -4,6 +4,9 @@ body {
 }
 
 a {
+  color: whitesmoke;
+}
+.flight-detail{
   color: #00B7FF;
 }
 .navbar {
@@ -12,5 +15,6 @@ a {
 }
 
 .btn {
-  background-color: hotpink;
+  background-color: #7e8479;
+  color: whitesmoke;
 }

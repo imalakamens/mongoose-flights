@@ -1,5 +1,5 @@
 <%- include('../partials/header') %> 
-<h2> <%= title %>  </h2>
+<h1> <%= title %>  </h1>
 
 <div>Airline:</div>
 <div><%= flight.airline %> </div>
@@ -24,11 +24,11 @@
 <% }; %> 
 <br>
 <!-- Render tix below! -->
+<h5>Tickets:</h5>
 
 <% tickets.forEach(t => { %>
-   
     <div>Seat:<%= t.seat %> </div>
-    <div>Price:<%= t.price %> </div>
+    <div>Price:$<%= t.price %> </div>
     
     <% }); %>
 
@@ -48,7 +48,7 @@
 <label for="arrival">Select Arrival Date:</label>
 <input type="datetime-local" name="arrival">
 <br>
-<input type="submit" value="Add Destination">
+<input class="btn btn-group" type="submit" value="Add Destination">
 </form>
 <br><a href="/flights/<%=flight._id%>/tickets/new" class="btn btn-group">Create Ticket</a>
 
